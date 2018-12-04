@@ -28,30 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(applicationForm));
             this.tbpSearchConnection = new System.Windows.Forms.TabPage();
             this.grpConnections = new System.Windows.Forms.GroupBox();
             this.dgvConnections = new System.Windows.Forms.DataGridView();
+            this.colDeparutreTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStartstation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFinalstation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpSearchConnection = new System.Windows.Forms.GroupBox();
-            this.txtStartstation = new System.Windows.Forms.TextBox();
             this.cmbFinalstation = new System.Windows.Forms.ComboBox();
+            this.cmbStartstation = new System.Windows.Forms.ComboBox();
+            this.dtpTime = new System.Windows.Forms.DateTimePicker();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.lblFinalstation = new System.Windows.Forms.Label();
             this.lblStartstation = new System.Windows.Forms.Label();
             this.btnSearchConnection = new System.Windows.Forms.Button();
             this.tbcNagivation = new System.Windows.Forms.TabControl();
             this.tbpDeparture = new System.Windows.Forms.TabPage();
             this.grpDeparture = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvDepartureTable = new System.Windows.Forms.DataGridView();
+            this.colLine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDepartureTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colArrivalStation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpInfo = new System.Windows.Forms.GroupBox();
             this.cmbStation = new System.Windows.Forms.ComboBox();
             this.lblStation = new System.Windows.Forms.Label();
             this.btnInfo = new System.Windows.Forms.Button();
-            this.colStartstation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFinalstation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbpSearchConnection.SuspendLayout();
             this.grpConnections.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConnections)).BeginInit();
@@ -59,7 +63,7 @@
             this.tbcNagivation.SuspendLayout();
             this.tbpDeparture.SuspendLayout();
             this.grpDeparture.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDepartureTable)).BeginInit();
             this.grpInfo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,22 +92,65 @@
             // 
             // dgvConnections
             // 
+            this.dgvConnections.AllowUserToAddRows = false;
+            this.dgvConnections.AllowUserToDeleteRows = false;
+            this.dgvConnections.AllowUserToResizeColumns = false;
+            this.dgvConnections.AllowUserToResizeRows = false;
             this.dgvConnections.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConnections.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colDeparutreTime,
             this.colStartstation,
-            this.colTime,
+            this.colDuration,
             this.colFinalstation});
             this.dgvConnections.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvConnections.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dgvConnections.Location = new System.Drawing.Point(3, 16);
             this.dgvConnections.Name = "dgvConnections";
+            this.dgvConnections.ReadOnly = true;
             this.dgvConnections.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvConnections.Size = new System.Drawing.Size(454, 230);
             this.dgvConnections.TabIndex = 0;
+            this.dgvConnections.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConnections_CellDoubleClick);
+            // 
+            // colDeparutreTime
+            // 
+            this.colDeparutreTime.HeaderText = "Abfahrtszeit";
+            this.colDeparutreTime.Name = "colDeparutreTime";
+            this.colDeparutreTime.ReadOnly = true;
+            this.colDeparutreTime.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colDeparutreTime.Width = 75;
+            // 
+            // colStartstation
+            // 
+            this.colStartstation.HeaderText = "Startstation";
+            this.colStartstation.MinimumWidth = 10;
+            this.colStartstation.Name = "colStartstation";
+            this.colStartstation.ReadOnly = true;
+            this.colStartstation.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colStartstation.Width = 125;
+            // 
+            // colDuration
+            // 
+            this.colDuration.HeaderText = "Reisezeit";
+            this.colDuration.Name = "colDuration";
+            this.colDuration.ReadOnly = true;
+            this.colDuration.Width = 75;
+            // 
+            // colFinalstation
+            // 
+            this.colFinalstation.HeaderText = "Ankunfrsstation";
+            this.colFinalstation.Name = "colFinalstation";
+            this.colFinalstation.ReadOnly = true;
+            this.colFinalstation.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colFinalstation.Width = 125;
             // 
             // grpSearchConnection
             // 
-            this.grpSearchConnection.Controls.Add(this.txtStartstation);
             this.grpSearchConnection.Controls.Add(this.cmbFinalstation);
+            this.grpSearchConnection.Controls.Add(this.cmbStartstation);
+            this.grpSearchConnection.Controls.Add(this.dtpTime);
+            this.grpSearchConnection.Controls.Add(this.lblDate);
+            this.grpSearchConnection.Controls.Add(this.dtpDate);
             this.grpSearchConnection.Controls.Add(this.lblFinalstation);
             this.grpSearchConnection.Controls.Add(this.lblStartstation);
             this.grpSearchConnection.Controls.Add(this.btnSearchConnection);
@@ -115,30 +162,66 @@
             this.grpSearchConnection.TabStop = false;
             this.grpSearchConnection.Text = "Verbindungen suchen";
             // 
-            // txtStartstation
-            // 
-            this.txtStartstation.AllowDrop = true;
-            this.txtStartstation.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtStartstation.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtStartstation.Location = new System.Drawing.Point(279, 24);
-            this.txtStartstation.Name = "txtStartstation";
-            this.txtStartstation.Size = new System.Drawing.Size(164, 20);
-            this.txtStartstation.TabIndex = 7;
-            this.txtStartstation.TextChanged += new System.EventHandler(this.cmbStartstation_TextChanged);
-            // 
             // cmbFinalstation
             // 
-            this.cmbFinalstation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbFinalstation.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbFinalstation.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbFinalstation.FormattingEnabled = true;
-            this.cmbFinalstation.Location = new System.Drawing.Point(279, 85);
+            this.cmbFinalstation.Location = new System.Drawing.Point(279, 62);
+            this.cmbFinalstation.MaximumSize = new System.Drawing.Size(164, 0);
+            this.cmbFinalstation.MinimumSize = new System.Drawing.Size(164, 0);
             this.cmbFinalstation.Name = "cmbFinalstation";
             this.cmbFinalstation.Size = new System.Drawing.Size(164, 21);
-            this.cmbFinalstation.TabIndex = 6;
+            this.cmbFinalstation.TabIndex = 16;
+            this.cmbFinalstation.TextChanged += new System.EventHandler(this.autoComplete);
+            // 
+            // cmbStartstation
+            // 
+            this.cmbStartstation.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbStartstation.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbStartstation.FormattingEnabled = true;
+            this.cmbStartstation.Location = new System.Drawing.Point(279, 24);
+            this.cmbStartstation.MaximumSize = new System.Drawing.Size(164, 0);
+            this.cmbStartstation.MinimumSize = new System.Drawing.Size(164, 0);
+            this.cmbStartstation.Name = "cmbStartstation";
+            this.cmbStartstation.Size = new System.Drawing.Size(164, 21);
+            this.cmbStartstation.TabIndex = 15;
+            this.cmbStartstation.TextChanged += new System.EventHandler(this.autoComplete);
+            // 
+            // dtpTime
+            // 
+            this.dtpTime.CalendarTitleBackColor = System.Drawing.SystemColors.WindowText;
+            this.dtpTime.Checked = false;
+            this.dtpTime.CustomFormat = "HH:mm";
+            this.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpTime.Location = new System.Drawing.Point(154, 98);
+            this.dtpTime.Name = "dtpTime";
+            this.dtpTime.ShowUpDown = true;
+            this.dtpTime.Size = new System.Drawing.Size(86, 20);
+            this.dtpTime.TabIndex = 13;
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Location = new System.Drawing.Point(38, 104);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(31, 13);
+            this.lblDate.TabIndex = 12;
+            this.lblDate.Text = "Zeit: ";
+            // 
+            // dtpDate
+            // 
+            this.dtpDate.Checked = false;
+            this.dtpDate.CustomFormat = "";
+            this.dtpDate.Location = new System.Drawing.Point(260, 98);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(183, 20);
+            this.dtpDate.TabIndex = 9;
             // 
             // lblFinalstation
             // 
             this.lblFinalstation.AutoSize = true;
-            this.lblFinalstation.Location = new System.Drawing.Point(38, 88);
+            this.lblFinalstation.Location = new System.Drawing.Point(38, 65);
             this.lblFinalstation.Name = "lblFinalstation";
             this.lblFinalstation.Size = new System.Drawing.Size(63, 13);
             this.lblFinalstation.TabIndex = 2;
@@ -189,7 +272,7 @@
             // 
             // grpDeparture
             // 
-            this.grpDeparture.Controls.Add(this.dataGridView1);
+            this.grpDeparture.Controls.Add(this.dgvDepartureTable);
             this.grpDeparture.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpDeparture.Location = new System.Drawing.Point(3, 184);
             this.grpDeparture.Name = "grpDeparture";
@@ -198,44 +281,45 @@
             this.grpDeparture.TabStop = false;
             this.grpDeparture.Text = "Abfahrten";
             // 
-            // dataGridView1
+            // dgvDepartureTable
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 16);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView1.Size = new System.Drawing.Size(454, 230);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvDepartureTable.AllowUserToAddRows = false;
+            this.dgvDepartureTable.AllowUserToDeleteRows = false;
+            this.dgvDepartureTable.AllowUserToResizeColumns = false;
+            this.dgvDepartureTable.AllowUserToResizeRows = false;
+            this.dgvDepartureTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDepartureTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colLine,
+            this.colDepartureTime,
+            this.colArrivalStation});
+            this.dgvDepartureTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDepartureTable.Location = new System.Drawing.Point(3, 16);
+            this.dgvDepartureTable.Name = "dgvDepartureTable";
+            this.dgvDepartureTable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvDepartureTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDepartureTable.Size = new System.Drawing.Size(454, 230);
+            this.dgvDepartureTable.TabIndex = 0;
+            this.dgvDepartureTable.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDepartureTable_CellContentDoubleClick);
             // 
-            // dataGridViewTextBoxColumn1
+            // colLine
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Linie/Gleis";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.colLine.HeaderText = "Linie";
+            this.colLine.Name = "colLine";
+            this.colLine.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn2
+            // colDepartureTime
             // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Startstation";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.colDepartureTime.HeaderText = "Abfahrtszeit";
+            this.colDepartureTime.Name = "colDepartureTime";
+            this.colDepartureTime.ReadOnly = true;
+            this.colDepartureTime.Width = 125;
             // 
-            // dataGridViewTextBoxColumn3
+            // colArrivalStation
             // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Reisezeit";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Ankunfrsstation";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.colArrivalStation.HeaderText = "Ankunftsstation";
+            this.colArrivalStation.Name = "colArrivalStation";
+            this.colArrivalStation.ReadOnly = true;
+            this.colArrivalStation.Width = 175;
             // 
             // grpInfo
             // 
@@ -252,14 +336,16 @@
             // 
             // cmbStation
             // 
-            this.cmbStation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbStation.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmbStation.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbStation.FormattingEnabled = true;
             this.cmbStation.Location = new System.Drawing.Point(279, 24);
+            this.cmbStation.MaximumSize = new System.Drawing.Size(164, 0);
+            this.cmbStation.MinimumSize = new System.Drawing.Size(164, 0);
             this.cmbStation.Name = "cmbStation";
             this.cmbStation.Size = new System.Drawing.Size(164, 21);
-            this.cmbStation.TabIndex = 5;
+            this.cmbStation.TabIndex = 16;
+            this.cmbStation.TextChanged += new System.EventHandler(this.autoComplete);
             // 
             // lblStation
             // 
@@ -279,27 +365,7 @@
             this.btnInfo.TabIndex = 0;
             this.btnInfo.Text = "Info suchen";
             this.btnInfo.UseVisualStyleBackColor = true;
-            // 
-            // colStartstation
-            // 
-            this.colStartstation.HeaderText = "Startstation";
-            this.colStartstation.MinimumWidth = 10;
-            this.colStartstation.Name = "colStartstation";
-            this.colStartstation.ReadOnly = true;
-            this.colStartstation.Width = 150;
-            // 
-            // colTime
-            // 
-            this.colTime.HeaderText = "Reisezeit";
-            this.colTime.Name = "colTime";
-            this.colTime.ReadOnly = true;
-            // 
-            // colFinalstation
-            // 
-            this.colFinalstation.HeaderText = "Ankunfrsstation";
-            this.colFinalstation.Name = "colFinalstation";
-            this.colFinalstation.ReadOnly = true;
-            this.colFinalstation.Width = 150;
+            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
             // 
             // applicationForm
             // 
@@ -307,6 +373,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(474, 462);
             this.Controls.Add(this.tbcNagivation);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(490, 501);
             this.MinimumSize = new System.Drawing.Size(490, 501);
             this.Name = "applicationForm";
             this.Text = "ÖV-App";
@@ -318,7 +386,7 @@
             this.tbcNagivation.ResumeLayout(false);
             this.tbpDeparture.ResumeLayout(false);
             this.grpDeparture.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDepartureTable)).EndInit();
             this.grpInfo.ResumeLayout(false);
             this.grpInfo.PerformLayout();
             this.ResumeLayout(false);
@@ -336,21 +404,24 @@
         private System.Windows.Forms.Label lblFinalstation;
         private System.Windows.Forms.Label lblStartstation;
         private System.Windows.Forms.Button btnSearchConnection;
-        private System.Windows.Forms.ComboBox cmbFinalstation;
-        private System.Windows.Forms.TextBox txtStartstation;
         private System.Windows.Forms.GroupBox grpInfo;
-        private System.Windows.Forms.ComboBox cmbStation;
         private System.Windows.Forms.Label lblStation;
         private System.Windows.Forms.Button btnInfo;
         private System.Windows.Forms.GroupBox grpDeparture;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridView dgvDepartureTable;
+        private System.Windows.Forms.DateTimePicker dtpDate;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.DateTimePicker dtpTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDeparutreTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStartstation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDuration;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFinalstation;
+        private System.Windows.Forms.ComboBox cmbStartstation;
+        private System.Windows.Forms.ComboBox cmbFinalstation;
+        private System.Windows.Forms.ComboBox cmbStation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colLine;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDepartureTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colArrivalStation;
     }
 }
 

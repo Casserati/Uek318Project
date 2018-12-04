@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissTransportTest", "tests
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissTransportApp", "SwissTransportUI\SwissTransportApp.csproj", "{619B0873-7B7A-4561-93DB-CA67A9B7ACC2}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SwissTransportAppSetup", "SwissTransportAppSetup\SwissTransportAppSetup.vdproj", "{1CC8C603-0B28-4BC6-8175-8F1578CEC8EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,8 @@ Global
 		{619B0873-7B7A-4561-93DB-CA67A9B7ACC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{619B0873-7B7A-4561-93DB-CA67A9B7ACC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{619B0873-7B7A-4561-93DB-CA67A9B7ACC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CC8C603-0B28-4BC6-8175-8F1578CEC8EE}.Debug|Any CPU.ActiveCfg = Debug
+		{1CC8C603-0B28-4BC6-8175-8F1578CEC8EE}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

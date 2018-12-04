@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
@@ -30,7 +31,7 @@ namespace SwissTransport
 
         public string ArrivalTimestamp { get; set; }
 
-        public string Departure { get; set; }
+        public DateTime Departure { get; set; }
 
         public string DepartureTimestamp { get; set; }
 
