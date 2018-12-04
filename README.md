@@ -1,6 +1,4 @@
 # modul-318-Student
 
-Students!
-Fork this repository to your own Github account. Work there with this repository. The intructor will clone your repo for inspection and evaluation.
 
-Have Fun!
+Welcome to my UEK-Project, you will find my Application in the SwissTransportSetup/Installation Folder, Feel Free to read my Documentation in the precast folder /Documentation/ .
