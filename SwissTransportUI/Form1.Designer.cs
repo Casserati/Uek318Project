@@ -109,7 +109,7 @@
             this.dgvConnections.ReadOnly = true;
             this.dgvConnections.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvConnections.Size = new System.Drawing.Size(454, 230);
-            this.dgvConnections.TabIndex = 0;
+            this.dgvConnections.TabIndex = 6;
             this.dgvConnections.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConnections_CellDoubleClick);
             // 
             // colDeparutreTime
@@ -166,13 +166,16 @@
             // 
             this.cmbFinalstation.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmbFinalstation.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbFinalstation.DropDownHeight = 1;
+            this.cmbFinalstation.DropDownWidth = 1;
             this.cmbFinalstation.FormattingEnabled = true;
+            this.cmbFinalstation.IntegralHeight = false;
             this.cmbFinalstation.Location = new System.Drawing.Point(279, 62);
             this.cmbFinalstation.MaximumSize = new System.Drawing.Size(164, 0);
             this.cmbFinalstation.MinimumSize = new System.Drawing.Size(164, 0);
             this.cmbFinalstation.Name = "cmbFinalstation";
             this.cmbFinalstation.Size = new System.Drawing.Size(164, 21);
-            this.cmbFinalstation.TabIndex = 16;
+            this.cmbFinalstation.TabIndex = 2;
             this.cmbFinalstation.TextChanged += new System.EventHandler(this.autoComplete);
             // 
             // cmbStartstation
@@ -185,7 +188,7 @@
             this.cmbStartstation.MinimumSize = new System.Drawing.Size(164, 0);
             this.cmbStartstation.Name = "cmbStartstation";
             this.cmbStartstation.Size = new System.Drawing.Size(164, 21);
-            this.cmbStartstation.TabIndex = 15;
+            this.cmbStartstation.TabIndex = 1;
             this.cmbStartstation.TextChanged += new System.EventHandler(this.autoComplete);
             // 
             // dtpTime
@@ -198,7 +201,7 @@
             this.dtpTime.Name = "dtpTime";
             this.dtpTime.ShowUpDown = true;
             this.dtpTime.Size = new System.Drawing.Size(86, 20);
-            this.dtpTime.TabIndex = 13;
+            this.dtpTime.TabIndex = 3;
             // 
             // lblDate
             // 
@@ -216,7 +219,7 @@
             this.dtpDate.Location = new System.Drawing.Point(260, 98);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(183, 20);
-            this.dtpDate.TabIndex = 9;
+            this.dtpDate.TabIndex = 4;
             // 
             // lblFinalstation
             // 
@@ -242,7 +245,7 @@
             this.btnSearchConnection.Location = new System.Drawing.Point(313, 133);
             this.btnSearchConnection.Name = "btnSearchConnection";
             this.btnSearchConnection.Size = new System.Drawing.Size(130, 23);
-            this.btnSearchConnection.TabIndex = 0;
+            this.btnSearchConnection.TabIndex = 5;
             this.btnSearchConnection.Text = "Verbindungen suchen";
             this.btnSearchConnection.UseVisualStyleBackColor = true;
             this.btnSearchConnection.Click += new System.EventHandler(this.btnSearchConnection_Click);
@@ -298,7 +301,7 @@
             this.dgvDepartureTable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvDepartureTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDepartureTable.Size = new System.Drawing.Size(454, 230);
-            this.dgvDepartureTable.TabIndex = 0;
+            this.dgvDepartureTable.TabIndex = 9;
             this.dgvDepartureTable.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDepartureTable_CellContentDoubleClick);
             // 
             // colLine
@@ -344,7 +347,7 @@
             this.cmbStation.MinimumSize = new System.Drawing.Size(164, 0);
             this.cmbStation.Name = "cmbStation";
             this.cmbStation.Size = new System.Drawing.Size(164, 21);
-            this.cmbStation.TabIndex = 16;
+            this.cmbStation.TabIndex = 7;
             this.cmbStation.TextChanged += new System.EventHandler(this.autoComplete);
             // 
             // lblStation
@@ -362,7 +365,7 @@
             this.btnInfo.Location = new System.Drawing.Point(313, 85);
             this.btnInfo.Name = "btnInfo";
             this.btnInfo.Size = new System.Drawing.Size(130, 23);
-            this.btnInfo.TabIndex = 0;
+            this.btnInfo.TabIndex = 8;
             this.btnInfo.Text = "Info suchen";
             this.btnInfo.UseVisualStyleBackColor = true;
             this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
